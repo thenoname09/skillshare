@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "title": "Complete Web Development Bootcamp",
+    "instructor": "John Doe",
+    "duration": "20 hours",
+    "rating": 4.8,
+    "level": "Beginner",
+    "description": "Learn full-stack web development from scratch using HTML, CSS, JavaScript, React, Node.js, and MongoDB.",
+    "image": "https://i.postimg.cc/8P6L0G2H/course1.jpg",
+    "category": "Development"
+  },
+  {
+    "id": 2,
+    "title": "UI/UX Design Masterclass",
+    "instructor": "Sarah Williams",
+    "duration": "15 hours",
+    "rating": 4.7,
+    "level": "Intermediate",
+    "description": "Master modern UI/UX principles and design stunning user experiences using Figma.",
+    "image": "https://i.postimg.cc/7LxYQ8D0/course2.jpg",
+    "category": "Design"
+  },
+  {
+    "id": 3,
+    "title": "Digital Marketing Strategy",
+    "instructor": "Michael Brown",
+    "duration": "12 hours",
+    "rating": 4.6,
+    "level": "Beginner",
+    "description": "Learn SEO, social media marketing, email campaigns, and content strategy.",
+    "image": "https://i.postimg.cc/jS5ybw3k/course3.jpg",
+    "category": "Marketing"
+  },
+  {
+    "id": 4,
+    "title": "React & Next.js Advanced Course",
+    "instructor": "Emily Johnson",
+    "duration": "18 hours",
+    "rating": 4.9,
+    "level": "Advanced",
+    "description": "Build modern full-stack applications using React, Next.js, and Tailwind CSS.",
+    "image": "https://i.postimg.cc/fL21wM4x/course4.jpg",
+    "category": "Development"
+  },
+  {
+    "id": 5,
+    "title": "Python for Data Science",
+    "instructor": "David Lee",
+    "duration": "22 hours",
+    "rating": 4.8,
+    "level": "Intermediate",
+    "description": "Analyze data, build machine learning models, and visualize insights with Python.",
+    "image": "https://i.postimg.cc/9Q0k7T0v/course5.jpg",
+    "category": "Data Science"
+  },
+  {
+    "id": 6,
+    "title": "Mobile App Development with Flutter",
+    "instructor": "Sophia Miller",
+    "duration": "16 hours",
+    "rating": 4.7,
+    "level": "Intermediate",
+    "description": "Create beautiful cross-platform mobile applications using Flutter and Dart.",
+    "image": "https://i.postimg.cc/X7wW6x7n/course6.jpg",
+    "category": "Mobile Development"
+  },
+  {
+    "id": 7,
+    "title": "Cyber Security Fundamentals",
+    "instructor": "James Anderson",
+    "duration": "14 hours",
+    "rating": 4.5,
+    "level": "Beginner",
+    "description": "Understand ethical hacking, network security, and cyber threat protection.",
+    "image": "https://i.postimg.cc/tT7Z2n8f/course7.jpg",
+    "category": "Security"
+  },
+  {
+    "id": 8,
+    "title": "Graphic Design Essentials",
+    "instructor": "Olivia Wilson",
+    "duration": "10 hours",
+    "rating": 4.6,
+    "level": "Beginner",
+    "description": "Learn Photoshop, Illustrator, and essential graphic design techniques.",
+    "image": "https://i.postimg.cc/5N4W2Q1p/course8.jpg",
+    "category": "Design"
+  }
+]
