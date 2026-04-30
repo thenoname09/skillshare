@@ -18,7 +18,7 @@ const PopularCourses = async() => {
               </Link>
             </div>
              
-             <div className='max-w-4xl mx-auto mt-6 grid grid-cols-1 md:grid-cols-3 gap-6'>
+             <div className='max-w-5xl mx-auto mt-6 grid grid-cols-1 md:grid-cols-3 gap-6'>
                 {topCourses.map(Course => <AllCourseCard key={Course.id} Course={Course} ></AllCourseCard>
 
                  )}
