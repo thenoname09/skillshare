@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import React from 'react';
 import AllCourseCard from './AllCourseCard';
+import { getCourses } from '@/lib/data';
 
-const PopularCourses = async() => {
-    const res = await fetch("https://skillshare-umber.vercel.app/data.json")
-    const courses = await res.json()
+const PopularCourses = async  () => {
+    
+    const courses = await  getCourses()
     const topCourses = courses.sort((a, b) => b.rating - a.rating).slice(0, 3)
 
     return (
