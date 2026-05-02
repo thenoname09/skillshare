@@ -3,7 +3,7 @@ import React from 'react';
 // import { Divider } from "@heroui/react";
 const Footer = () => {
     return (
-        <footer className="bg-black text-white mt-20">
+        <footer className="bg-black text-white ">
       <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
 
         
@@ -80,14 +80,14 @@ const Footer = () => {
 
           <div className="flex flex-col gap-3 text-gray-400 text-sm">
             <Link
-              href="/terms"
+              href=""
               className="hover:text-orange-500 transition"
             >
               Terms & Conditions
             </Link>
 
             <Link
-              href="/privacy"
+              href=""
               className="hover:text-orange-500 transition"
             >
               Privacy Policy

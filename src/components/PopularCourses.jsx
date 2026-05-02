@@ -12,7 +12,7 @@ const PopularCourses = async  () => {
         <div className='max-w-6xl mx-auto py-12'>
 
             <div className='flex justify-between '>
-                <h2 className='font-bold text-4xl'>Popular <span className='text-orange-500'>Courses</span>
+                <h2 className='font-bold text-gray-800 text-4xl'>Popular <span className='text-orange-500'>Courses</span>
              </h2>
               <Link href={"/courses"} className=' text-orange-400'>
               All-Courses

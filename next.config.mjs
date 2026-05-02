@@ -9,8 +9,13 @@ const nextConfig = {
         hostname: 'images.unsplash.com',
        
       },
+       {
+        protocol: "https",
+        hostname: "cdn-icons-png.flaticon.com",
+      },
     ],
   },
+   
 };
 
 export default nextConfig;
