@@ -14,12 +14,14 @@ import {
   TextField,
 } from "@heroui/react";
 import { useRouter } from "next/navigation";
+import { BsGoogle } from "react-icons/bs";
 
-import { FaCheck } from "react-icons/fa";
+
 import { LuCheck } from "react-icons/lu";
-import { MdOutlineCheck } from "react-icons/md";
+
 
 export default function  RegisterPage() {
+
  const router = useRouter();
 
   const onSubmit = async (e) => {
@@ -48,7 +50,11 @@ export default function  RegisterPage() {
 
     
   };
-
+ const handlGoogleSignIn = async () => {
+    await authClient.signIn.social({
+        provider: 'google'
+    })
+  }
    
 
   return (
@@ -122,6 +128,11 @@ export default function  RegisterPage() {
           </Button>
         </div>
       </Form>
+<p className="text-center">Or</p>
+
+      <Button onClick={handlGoogleSignIn} variant="outline" className={'w-full'}><BsGoogle/> Sign In With Google
+      </Button>
+
     </Card>
   );
 }
