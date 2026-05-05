@@ -49,8 +49,10 @@ export default function  LoginPage() {
     }
 
       if(!error) {
-       router.replace("/")
-        router.refresh()
+      //  router.replace("/")
+      //   router.refresh()
+      
+      window.location.href = "/";
        
     }
   };
