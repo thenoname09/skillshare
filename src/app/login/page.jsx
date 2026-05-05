@@ -48,6 +48,7 @@ export default function  LoginPage() {
 
       if(!error) {
         router.push('/')
+        router.refresh()
     }
   };
 

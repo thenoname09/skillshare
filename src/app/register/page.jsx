@@ -48,6 +48,7 @@ export default function  RegisterPage() {
 
       if(!error) {
         router.push('/')
+        router.refresh()
     }
        if (error) {
       
