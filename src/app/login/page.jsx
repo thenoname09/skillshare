@@ -16,6 +16,7 @@ import {
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { BsGoogle } from "react-icons/bs";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 
@@ -47,8 +48,8 @@ export default function  LoginPage() {
     }
 
       if(!error) {
+       router.replace("/")
         router.refresh()
-        router.push('/')
        
     }
   };
@@ -58,6 +59,7 @@ export default function  LoginPage() {
         provider: 'google'
     })
   }
+     const [isShowPassword, setIsShowPassword] = useState(false);
 
   return (
     <Card className="border mx-auto w-70 md:w-125 py-10 mt-10 mb-25">
@@ -92,10 +94,11 @@ export default function  LoginPage() {
         </TextField>
 
         <TextField
+        className={"relative"}
           isRequired
           minLength={8}
           name="password"
-          type="password"
+          type={isShowPassword ? "text" : "password"}
           validate={(value) => {
             if (value.length < 8) {
               return "Password must be at least 8 characters";
@@ -112,9 +115,11 @@ export default function  LoginPage() {
         >
           <Label>Password</Label>
           <Input placeholder="Enter your password" />
+          <span className="absolute right-4 top-9 cursor-pointer" onClick={() => setIsShowPassword(!isShowPassword)} > {isShowPassword ? <FaEye /> : <FaEyeSlash />} </span>
           <Description>
             Must be at least 8 characters with 1 uppercase and 1 number
           </Description>
+          
           <FieldError />
         </TextField>
 
