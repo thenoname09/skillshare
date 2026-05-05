@@ -14,6 +14,7 @@ import {
   TextField,
 } from "@heroui/react";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { BsGoogle } from "react-icons/bs";
 
 
@@ -22,7 +23,7 @@ import { BsGoogle } from "react-icons/bs";
 export default function  LoginPage() {
 
      const router = useRouter();
-
+  const [error, setError] = useState("")
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -39,7 +40,11 @@ export default function  LoginPage() {
        
     })
 
-    console.log(data, error);
+     if (error) {
+      
+      setError(error.message || "Login failed. Please try again.");
+      return;
+    }
 
       if(!error) {
         router.push('/')
@@ -53,10 +58,17 @@ export default function  LoginPage() {
   }
 
   return (
-    <Card className="border mx-auto w-125 py-10 mt-10 mb-25">
-      <h1 className="text-center text-2xl font-bold pb-5"> Login Your Account</h1>
+    <Card className="border mx-auto w-70 md:w-125 py-10 mt-10 mb-25">
+      <h1 className="text-center text-2xl font-bold pb-1"> Login Your Account</h1>
+        <Description>
+               {error && (
+                <p className="text-red-500 text-sm text-center mb-3 px-6 font-semibold">
+                  {error}
+                </p>
+              )}
+            </Description>
 
-      <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
+      <Form className="flex  w-full px-6 md:w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
       
   
 
@@ -104,8 +116,8 @@ export default function  LoginPage() {
           <FieldError />
         </TextField>
 
-        <div className="flex gap-3 justify-center items-center  pt-4 ">
-          <Button className="w-full items-center text-center" type="submit">
+        <div className="flex justify-center pt-4 w-full">
+          <Button className="w-full" type="submit">
             
             Login 
           </Button>
@@ -114,7 +126,7 @@ export default function  LoginPage() {
       </Form>
           <p className="text-center text-stone-500 text-sm">Or</p>
 
-            <div className="flex justify-center items-center w-96 mx-auto">
+            <div className="flex justify-center items-center w-auto md:w-96 mx-auto">
               <Button onClick={handlGoogleLogIn} variant="outline" className=" w-full text-center  items-center"><BsGoogle/> LogIn With Google
             </Button>
 

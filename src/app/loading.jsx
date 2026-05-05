@@ -13,9 +13,7 @@ const loading = () => {
         speedMultiplier={0.8}
       />
 
-      <p className="text-gray-400 text-sm font-medium tracking-wide">
-        Loading...
-      </p>
+      
 
     </div>
     );

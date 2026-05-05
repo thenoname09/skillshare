@@ -25,7 +25,7 @@ import { LuCheck } from "react-icons/lu";
 export default function  RegisterPage() {
 
  const router = useRouter();
-
+  const [error, setError] = useState("")
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -33,7 +33,7 @@ export default function  RegisterPage() {
     const image = e.target.image.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-
+    
     
     const {data, error} = await authClient.signUp.email({
         name,
@@ -49,7 +49,11 @@ export default function  RegisterPage() {
       if(!error) {
         router.push('/')
     }
-
+       if (error) {
+      
+      setError(error.message || "Registration failed. Please try again.");
+      return;
+    }
     
   };
  const handlGoogleSignIn = async () => {
@@ -60,10 +64,17 @@ export default function  RegisterPage() {
    const [isShowPassword, setIsShowPassword] = useState(false);
 
   return (
-    <Card className="border mx-auto w-125 py-10 mt-5 mb-10">
-      <h1 className="text-center text-2xl font-bold pb-5"> Register Your Account</h1>
+    <Card className="border mx-auto w-70 md:w-125 py-10 mt-5 mb-10">
+      <h1 className="text-center text-2xl font-bold pb-1"> Register Your Account</h1>
+      <Description>
+         {error && (
+          <p className="text-red-500 text-sm text-center mb-3 px-6 font-semibold">
+            {error}
+          </p>
+        )}
+      </Description>
 
-      <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
+      <Form className="flex  w-full px-6 md:w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
         <TextField isRequired name="name" type="text">
           <Label>Name</Label>
           <Input placeholder="Enter your name" />
@@ -123,7 +134,7 @@ export default function  RegisterPage() {
           <FieldError />
         </TextField>
 
-        <div className="flex gap-3 justify-center">
+        <div className="flex flex-col md:flex-row gap-3 items-center justify-center">
           <Button type="submit">
             <LuCheck    />
             Register 
