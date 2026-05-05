@@ -14,7 +14,9 @@ import {
   TextField,
 } from "@heroui/react";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { BsGoogle } from "react-icons/bs";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 import { LuCheck } from "react-icons/lu";
@@ -55,11 +57,11 @@ export default function  RegisterPage() {
         provider: 'google'
     })
   }
-   
+   const [isShowPassword, setIsShowPassword] = useState(false);
 
   return (
     <Card className="border mx-auto w-125 py-10 mt-5 mb-10">
-      <h1 className="text-center text-2xl font-bold"> Register Now</h1>
+      <h1 className="text-center text-2xl font-bold pb-5"> Register Your Account</h1>
 
       <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
         <TextField isRequired name="name" type="text">
@@ -92,10 +94,11 @@ export default function  RegisterPage() {
         </TextField>
 
         <TextField
+        className={"relative"}
           isRequired
           minLength={8}
           name="password"
-          type="password"
+          type={isShowPassword ? "text" : "password"}
           validate={(value) => {
             if (value.length < 8) {
               return "Password must be at least 8 characters";
@@ -109,9 +112,11 @@ export default function  RegisterPage() {
 
             return null;
           }}
+          
         >
           <Label>Password</Label>
           <Input placeholder="Enter your password" />
+          <span className="absolute right-4 top-9 cursor-pointer" onClick={() => setIsShowPassword(!isShowPassword)} > {isShowPassword ? <FaEye /> : <FaEyeSlash />} </span>
           <Description>
             Must be at least 8 characters with 1 uppercase and 1 number
           </Description>
@@ -128,7 +133,7 @@ export default function  RegisterPage() {
           </Button>
         </div>
       </Form>
-<p className="text-center">Or</p>
+      <p className="text-center text-stone-500 text-sm">Or</p>
 
       <Button onClick={handlGoogleSignIn} variant="outline" className={'w-full'}><BsGoogle/> Sign In With Google
       </Button>

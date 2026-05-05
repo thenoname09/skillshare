@@ -27,7 +27,7 @@ const LearningTips = () => {
                  
                 
 
-                <div className='grid grid-cols-3 gap-6  max-w-5xl mx-auto mt-10'>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-6  max-w-5xl mx-auto mt-10'>
 
                 
                     <div className='bg-slate-700 hover:bg-slate-600 p-6 rounded-2xl space-y-4 hover:scale-105 transition-all duration-300'>

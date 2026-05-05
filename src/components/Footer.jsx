@@ -1,3 +1,4 @@
+import { Separator } from '@heroui/react';
 import Link from 'next/link';
 import React from 'react';
 // import { Divider } from "@heroui/react";
@@ -97,7 +98,7 @@ const Footer = () => {
       </div>
 
       {/* <Divider className="bg-white/10" /> */}
-
+      <Separator orientation="vertical" />
       {/* Bottom */}
       <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
         <p>© 2026 SkillShare. All rights reserved.</p>

@@ -8,7 +8,7 @@ const TopInstructors = async () => {
 
    
     return (
-        <div>
+        <div className='bg-amber-50'>
               <div className='max-w-6xl mx-auto py-12'>
 
             <div className='flex justify-between '>

@@ -1,4 +1,4 @@
-import { Card } from "@heroui/react";
+import { Avatar, Card } from "@heroui/react";
 import React from "react";
 import { FaStar, FaUser } from "react-icons/fa";
 
@@ -20,17 +20,29 @@ const InstructorCard = ({ topInstructor }) => {
       .join("");
   return (
     <div>
-      <Card className="border  rounded-2xl hover:bg-white/40  shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ">
-        <div className="relative w-full h-48 "></div>
+      <Card className="border   rounded-2xl bg-white hover:bg-white/50  shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300  p-7">
+        <div className="  h-48  flex justify-center items-center ">
+         <Avatar className="h-32 w-32 ">
+          <Avatar.Image
+            alt="user.name"
+            src={topInstructor.instructor?.image}
+            referrerPolicy="no-referrer"
+          />
+          <Avatar.Fallback className="text-4xl ">{topInstructor?.instructor.charAt(0)}</Avatar.Fallback>
+        </Avatar>
+
+        </div>
+
+          <p className=" flex gap-2  text-xl items-center font-bold text-gray-900">
+            <FaUser /> {topInstructor.instructor}
+          </p>
 
         <div className="space-y-3">
-          <h3 className="text-xl font-bold text-gray-900 ">
+          <h3 className="text-sm font-semibold  text-gray-700 ">
             {getRole(topInstructor.category)}
           </h3>
 
-          <p className=" flex gap-2  text-xl items-center text-gray-700">
-            <FaUser /> {topInstructor.instructor}
-          </p>
+         
 
           <div className="flex items-center justify-between">
             <div className="flex flex-col items-center  ">

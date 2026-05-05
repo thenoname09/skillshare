@@ -14,6 +14,7 @@ import {
   TextField,
 } from "@heroui/react";
 import { useRouter } from "next/navigation";
+import { BsGoogle } from "react-icons/bs";
 
 
 import { LuCheck } from "react-icons/lu";
@@ -46,11 +47,15 @@ export default function  LoginPage() {
     }
   };
 
-   
+    const handlGoogleLogIn = async () => {
+    await authClient.signIn.social({
+        provider: 'google'
+    })
+  }
 
   return (
     <Card className="border mx-auto w-125 py-10 mt-10 mb-25">
-      <h1 className="text-center text-2xl font-bold"> Login </h1>
+      <h1 className="text-center text-2xl font-bold pb-5"> Login Your Account</h1>
 
       <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
       
@@ -100,16 +105,22 @@ export default function  LoginPage() {
           <FieldError />
         </TextField>
 
-        <div className="flex gap-3 justify-center">
-          <Button type="submit">
-            <LuCheck    />
+        <div className="flex gap-3 justify-center items-center  pt-4 ">
+          <Button className="w-full items-center text-center" type="submit">
+            
             Login 
           </Button>
-          <Button type="reset" variant="secondary">
-            Reset
-          </Button>
+         
         </div>
       </Form>
+          <p className="text-center text-stone-500 text-sm">Or</p>
+
+            <div className="flex justify-center items-center w-96 mx-auto">
+              <Button onClick={handlGoogleLogIn} variant="outline" className=" w-full text-center  items-center"><BsGoogle/> LogIn With Google
+            </Button>
+
+            </div>
+            
     </Card>
   );
 }
