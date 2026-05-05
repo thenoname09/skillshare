@@ -4,13 +4,16 @@ import { authClient } from "@/lib/auth-client";
 import { Avatar, Button } from "@heroui/react";
 import Link from "next/link";
 import NavLink from "./NavLink";
+import { useRouter } from "next/navigation";
 
 const NabBtn = () => {
+   const router = useRouter();
     const userData= authClient.useSession ()
          const user = userData.data?.user;
 
     const handleLogOut = async () => {
     await authClient.signOut();
+    router.refresh()
   }
     return (
         <>
