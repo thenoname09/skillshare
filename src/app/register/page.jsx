@@ -47,8 +47,8 @@ export default function  RegisterPage() {
     console.log(data, error);
 
       if(!error) {
+       router.refresh()
         router.push('/')
-        router.refresh()
     }
        if (error) {
       
