@@ -10,7 +10,7 @@ const ProfilePage = () => {
   return (
     <div>
       <Card className="max-w-120 mx-auto flex flex-col items-center border my-15 py-10 space-y-5 bg-stone-50 ">
-        <Avatar className="h-40 w-40 ">
+        <Avatar className="h-32 w-32 ">
           <Avatar.Image
             alt="user.name"
             src={user?.image}

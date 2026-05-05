@@ -17,7 +17,6 @@ import { useRouter } from "next/navigation";
 import { BsGoogle } from "react-icons/bs";
 
 
-import { LuCheck } from "react-icons/lu";
 
 
 export default function  LoginPage() {

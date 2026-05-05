@@ -25,8 +25,7 @@ const Navbar = () => {
             </div>
 
             <div className="space-x-3">
-                {/* <Link className=" text-orange-500" href={"/login"}>Login</Link>
-                <Link href={"/register"}>Register</Link> */}
+               
                 <NabBtn></NabBtn>
             </div>
             
