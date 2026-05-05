@@ -29,14 +29,15 @@ export default function  LoginPage() {
     e.preventDefault();
 
    
-    const email = e.target.email.value;
-    const password = e.target.password.value;
+    
+  const formData = new FormData(e.currentTarget);
+  const userdata = Object.fromEntries(formData.entries());
 
     
     const {data, error} = await authClient.signIn.email({
        
-        email,
-        password,
+        email: userdata.email ,
+        password: userdata.password,
         
        
     })

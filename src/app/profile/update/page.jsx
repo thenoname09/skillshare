@@ -59,7 +59,7 @@ const ProfileUpdatePage = () => {
               <h1 className="text-center text-2xl font-bold pb-5"> Update Your Profile</h1>
         
               <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
-                <TextField  name="name" type="text">
+                <TextField isRequired name="name" type="text">
                   <Label>Name</Label>
                   <Input placeholder="Update your name" />
                   <FieldError />
